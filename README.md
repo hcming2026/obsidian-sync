@@ -6,7 +6,7 @@
 - **GitHub(本仓库)** — 私有远程仓库,经 `obsidian-git` 插件自动备份与多端同步
 - **Zotero** — 文献管理(收集、PDF 标注),经 `obsidian-zotero-desktop-connector` 将文献笔记导入 Obsidian
 
-> 仓库管理规则见 [CLAUDE.md](./CLAUDE.md),运行命令见 [COMMANDS.md](./COMMANDS.md),规模与索引见 [INDEX.md](./INDEX.md)。
+> 仓库管理规则见 [CLAUDE.md](./CLAUDE.md),运行命令见 [COMMANDS.md](./COMMANDS.md),规模与索引见 [INDEX.md](./INDEX.md),**新设备从零搭建见 [新设备使用指南.md](./新设备使用指南.md)**。
 
 ## 目录结构
 
