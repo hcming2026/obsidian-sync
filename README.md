@@ -51,15 +51,59 @@ GitHub 私有仓库(obsidian-sync)  ← 跨设备自动同步/备份
 
 > 本仓库共享插件**配置**(`.obsidian/plugins/*/data.json`)与核心设置(`app.json` 等),不包含插件程序本体——新设备克隆后,在 Obsidian 社区市场重新安装同名插件即可自动套用配置。
 
-## 在新设备上使用(克隆即用)
+## 在新设备上使用（克隆即用）
 
-1. 安装 [Obsidian](https://obsidian.md/),以「打开文件夹作为仓库」打开本目录;
-2. 在 Obsidian 设置 → 第三方插件 → 关闭安全模式,安装上面两个插件;
-3. 插件会自动读取共享配置;`obsidian-git` 需要 `git` 命令可用,并完成一次 GitHub 凭据认证;
-4. (可选)Zotero 端安装 [Better BibTeX](https://retorque.re/zotero-better-bibtex/),保持引用键稳定。
+1. 安装 [Obsidian](https://obsidian.md/),在终端执行(需先配置好 GitHub 凭据):
 
-## 同步说明
+   ```bash
+   git clone https://github.com/hcming2026/obsidian-sync.git
+   cd obsidian-sync
+   ```
 
-- 本仓库为 **Private 私有仓库**,仅自己可见。
-- 自动提交信息形如 `vault backup: YYYY-MM-DD HH:mm:ss`。
-- 每次手动大改后,建议先 `git pull` 再改(obsidian-git 默认 `pullBeforePush` 已开启)。
+2. 在 Obsidian 里选择「打开文件夹作为仓库」,指向 `obsidian-sync` 目录;
+3. 设置 → 第三方插件 → 关闭安全模式 → 浏览安装 `obsidian-git` 与 `obsidian-zotero-desktop-connector`;
+4. 插件会自动读取仓库里共享的配置(`.obsidian/plugins/*/data.json`),无需重新设置;
+5. (可选)Zotero 端安装 [Better BibTeX](https://retorque.re/zotero-better-bibtex/),保持引用键稳定。
+
+## 如何同步（实操指南）
+
+### 1. 同步原理
+
+仓库根目录已配置好 Git 远程(私有仓库 `hcming2026/obsidian-sync`),并由 **obsidian-git** 插件定时执行:
+
+- 每 **5 分钟**自动 `commit`(提交信息形如 `vault backup: YYYY-MM-DD HH:mm:ss`);
+- 提交后自动 `push` 到 GitHub;`push` 前会先 `pull`(合并云端最新改动),避免多端冲突;
+- 本仓库已随库同步插件配置,所有设备克隆后行为一致。
+
+### 2. 日常无需手动操作
+
+只要保证 **Obsidian 处于打开状态**,改动笔记后最多等 5 分钟,云端即已更新。可开启「状态栏图标」,悬停可看到上次备份时间。
+
+### 3. 想立即同步（手动触发）
+
+按 `Ctrl+P` 打开命令面板,输入并执行:
+
+- `Obsidian Git: Push` —— 提交并推送本地改动;
+- `Obsidian Git: Pull` —— 拉取云端最新改动;
+- `Obsidian Git: Push and Sync`(或 `Backup`)—— 先拉后推,一步完成。
+
+> 建议每次手动大改后执行一次 `Push`(plugin 默认已开启 pull-before-push,无需担心覆盖云端)。
+
+### 4. 在新设备上首次使用
+
+克隆并打开仓库后,在 obsidian-git 设置中勾选 **`Auto pull on startup`**(默认关闭,首台设备建议开启),这样每次打开 Obsidian 都会自动拉取最新;然后手动执行一次 `Obsidian Git: Pull` 确认能连通远程。
+
+### 5. 常见问题
+
+| 现象 | 解决方法 |
+| --- | --- |
+| Push 时报 `could not read Username` / 401 | 本机未保存 GitHub 凭据。先安装 [Git for Windows](https://git-scm.com/) 并在任意终端执行一次 `git push` 完成登录(推荐 HTTPS + 凭据管理器),Obsidian 内即可复用 |
+| 报 `CONNECT tunnel failed` / 网络超时 | 公司/校园网代理导致,在 Git 中配置代理或切换网络后重试 |
+| `Auto pull` 冲突弹窗 | 两台设备同时改同一笔记所致。手动合并冲突后提交,或放弃本地改动(命令 `Obsidian Git: Discard` 谨慎使用) |
+| obsidian-git 提示找不到 git | 在插件设置 → 高级里手动指定 git 可执行文件路径(Windows 一般为 `C:\Program Files\Git\bin\git.exe`) |
+
+### 6. 备份纪律
+
+- 本仓库是**私有**的,但仍建议重要论文/课题另做一份本地压缩备份;
+- 论文 PDF 本体在 Zotero 中管理,不依赖本仓库;
+- 若误删笔记,可在 Obsidian 文件恢复(需插件)或 GitHub 提交历史中找回。

@@ -111,6 +111,7 @@
 | ---------- | ---------- | ------------------------- | -------------- |
 | 2026-09-07 | 仓库迁移   | 废弃旧远程 `obsidian_knowledge_repository`，改用新私有仓库 `obsidian-sync`；`.gitignore` 改为共享 Obsidian 核心配置与插件 data.json；默认分支 master → main | 根目录配置 |
 | 2026-09-07 | 科研流增强 | 新增 `07_Literature/` 科研文献库（校准 Zotero 插件导入路径），新增文献阅读模板，CLAUDE.md 新增职责六，README 改写为科研仓库主页 | `07_Literature/`、`05_Templates/`、`CLAUDE.md`、`README.md` |
+| 2026-09-07 | 文档完善   | README 补充「如何同步」实操指南：自动/手动同步、新设备首用、常见问题排查、备份纪律 | `README.md` |
 | 2026-08-01 | Inbox 整理 | 处理 1 条（论文 PDF《Integrating urban air mobility into the power grid through smart charging solutions》），新建「交通系统」领域，拆分为 4 篇原子化笔记 | `03_Knowledge/交通系统/`，原文归档至 `00_Inbox/已处理/` |
 | 2026-08-01 | 目录同步   | 同步用户手动重命名：`大模型`→`AI工程`、`编程`→`运筹优化`（对应 MOC 均尚未创建，笔记数均为 0） | `03_Knowledge/AI工程/`、`03_Knowledge/运筹优化/` |
 | 2026-08-01 | MOC 更新   | 新建《MOC - 知识管理》，收录 7 篇原子化笔记（核心概念、应用场景、相关主题） | `03_Knowledge/知识管理/MOC - 知识管理.md` |
