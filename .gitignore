@@ -1,12 +1,44 @@
-# 忽略整个 Obsidian 个人配置目录（每人可保留自己的插件/主题/设置）
-.obsidian/
+# ==========================================================
+#  Obsidian + GitHub 科研知识库 .gitignore
+#  原则:共享「核心设置 + 插件清单 + 插件配置」,忽略「个性化 + 缓存 + 程序本体」
+# ==========================================================
 
-# 系统文件
+# ---------- Obsidian:仅共享配置文件,其余全部忽略 ----------
+# 换设备克隆后,Obsidian 会自动读取下面这些共享配置;workspace/cache 属本地状态不入库。
+.obsidian/*
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/community-plugins.json
+!.obsidian/core-plugins.json
+!.obsidian/graph.json
+
+# 插件目录:只共享每个插件的 data.json(配置),不共享插件程序(main.js/manifest 等由 Obsidian 社区市场自动下载)
+!.obsidian/plugins/
+.obsidian/plugins/*
+!.obsidian/plugins/obsidian-git/
+!.obsidian/plugins/obsidian-zotero-desktop-connector/
+.obsidian/plugins/obsidian-git/*
+!.obsidian/plugins/obsidian-git/data.json
+.obsidian/plugins/obsidian-zotero-desktop-connector/*
+!.obsidian/plugins/obsidian-zotero-desktop-connector/data.json
+# 以后新增插件,复制上面两段并替换插件名即可共享其配置
+
+# Obsidian 本地运行文件(不入库)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# ---------- Claude Code:命令可共享,本地设置不入库 ----------
+.claude/settings.local.json
+.claude/settings.json
+
+# ---------- 系统与临时文件 ----------
 .DS_Store
 Thumbs.db
+desktop.ini
+~$*
+*.tmp
 
-# 如果希望保留部分共享配置，可改为：
-# .obsidian/workspace.json
-# .obsidian/workspace-mobile.json
-# .obsidian/plugins/*
-# 只提交 app.json 等核心设置（高级用法，初次搭建建议全忽略）
+# ---------- 大体积附件说明 ----------
+# 科研文献 PDF 本体请放在 Zotero 中管理,不要整库提交到 GitHub;
+# 若个别附件确需随库同步,可自行放宽对应规则或改用 Git LFS。
