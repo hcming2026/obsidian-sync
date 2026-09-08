@@ -1,6 +1,8 @@
 ---
 created: 2026-08-01
-tags: [交通系统/需求建模, type/笔记]
+tags:
+  - 交通系统/需求建模
+  - type/笔记
 status: 已完成
 source: Wu, J., Cao, S., Hansen, M., González, M.C. "Integrating urban air mobility into the power grid through smart charging solutions." （PDF，Inbox 归档）
 ---
