@@ -262,7 +262,12 @@ class PaperTracker:
         # 2. 生成 Markdown 日报
         md_content = self.generate_markdown_summary()
         today = datetime.now().strftime('%Y-%m-%d')
-        md_path = Path(self.config['output']['inbox_folder']) / f"{today}-论文追踪日报.md"
+
+        # 使用绝对路径：从脚本所在目录向上定位知识库根目录
+        script_dir = Path(__file__).parent.resolve()
+        kb_root = script_dir.parent.parent.parent  # _tools -> 城市低空资源研究 -> 04_Projects -> 知识库根目录
+        inbox_relative = self.config['output']['inbox_folder'].lstrip('./')
+        md_path = kb_root / inbox_relative / f"{today}-论文追踪日报.md"
         md_path.parent.mkdir(parents=True, exist_ok=True)
 
         with open(md_path, 'w', encoding='utf-8') as f:
