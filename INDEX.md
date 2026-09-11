@@ -109,6 +109,7 @@
 
 | 日期       | 操作类型   | 内容摘要                  | 涉及文件/领域  |
 | ---------- | ---------- | ------------------------- | -------------- |
+| 2026-09-11 | 工具开发   | 创建论文自动追踪系统：支持 arXiv + Semantic Scholar API 每日自动查询；配置 20 个 UAM 相关中英文关键词；每日生成 Markdown 日报至 `00_Inbox/待处理/`；含 Windows 任务计划自动化脚本 | `04_Projects/城市低空资源研究/_tools/` |
 | 2026-09-07 | 仓库迁移   | 废弃旧远程 `obsidian_knowledge_repository`，改用新私有仓库 `obsidian-sync`；`.gitignore` 改为共享 Obsidian 核心配置与插件 data.json；默认分支 master → main | 根目录配置 |
 | 2026-09-07 | 科研流增强 | 新增 `07_Literature/` 科研文献库（校准 Zotero 插件导入路径），新增文献阅读模板，CLAUDE.md 新增职责六，README 改写为科研仓库主页 | `07_Literature/`、`05_Templates/`、`CLAUDE.md`、`README.md` |
 | 2026-09-07 | 文档完善   | README 补充「如何同步」实操指南：自动/手动同步、新设备首用、常见问题排查、备份纪律 | `README.md` |

@@ -1,0 +1,25 @@
+{
+  "arxiv": [
+    {
+      "title": "Propeller-wing interactions of a lift + cruise eVTOL configuration during transition",
+      "authors": [
+        "Oliver Westcott",
+        "Robert Entwistle",
+        "Swathi Krishna"
+      ],
+      "abstract": "The wakes of a lift + cruise aircraft's vertical lift propellers interact with the wing during the transition from hover to forward flight. This study investigates how variations in axial and longitudinal separations between the vertical lift propellers and the wing affect aerodynamic performance during this critical phase. Axial variations were introduced by orienting the motors either upright or inverted at two longitudinal positions relative to the wing. Wind tunnel tests were conducted on the resulting lift + cruise wing configurations over a Reynolds number range of 52,000 to 377,000, using tufts, pressure taps, and load cells to capture aerodynamic behaviour. Results show that the early transition phase (front propeller advance ratios between 0 and 0.25) is particularly sensitive to configuration changes. Rear motor orientation had a pronounced effect: when oriented upright at the shortest longitudinal separation, the active lift propellers increased the lift-drag ratio of the design by approximately 4 units, whereas in the rear motor inverted case the design suffered a 4-point reduction in the lift-drag ratio. Decreasing the longitudinal separation amplified both the beneficial lift contribution of the rear propeller and the generally adverse effects of the front propeller. However, placing the front propeller closer to the wing in the upright orientation enhanced performance at advance ratios between 0.11 and 0.25, due to favourable interactions between the wing and the front propeller's trailing vortices.",
+      "published": "2026-09-07",
+      "arxiv_id": "2609.07665v2",
+      "pdf_url": "https://arxiv.org/pdf/2609.07665v2",
+      "categories": [
+        "physics.flu-dyn"
+      ],
+      "source": "arXiv"
+    }
+  ],
+  "semantic_scholar": [],
+  "metadata": {
+    "timestamp": "2026-09-11T13:05:10.987906",
+    "total_papers": 1
+  }
+}

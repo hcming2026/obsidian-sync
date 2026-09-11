@@ -1,0 +1,86 @@
+# 论文追踪配置文件
+# 最后更新: 2026-09-10
+
+# 研究关键词
+keywords:
+  chinese:
+    - 城市空中交通
+    - 低空交通系统
+    - 低空资源配置
+    - eVTOL运行系统
+    - 垂直起降场运营
+    - 交通—能源耦合系统
+    - 综合交通能源系统
+    - 充电负荷建模
+    - 充电需求预测
+    - 交通系统与电力系统协同优化
+    - 多保真建模
+    - 模型精细度选择
+    - 仿真优化
+    - 随机交通需求
+    - 时空负荷建模
+
+  english:
+    - Urban Air Mobility
+    - UAM
+    - Advanced Air Mobility
+    - AAM
+    - Electric Vertical Take-off and Landing Aircraft
+    - eVTOL
+    - Vertiport Operations
+    - Vertiport Charging Infrastructure
+    - Transportation–Energy Coupling
+    - Integrated Mobility–Energy Systems
+    - Transportation–Power System Coupling
+    - Charging Load Modeling
+    - Charging Demand Forecasting
+    - Spatiotemporal Load Profile
+    - Simulation–Optimization
+    - Multi-fidelity Modeling
+    - Model Fidelity
+    - Model Granularity
+    - Uncertainty Quantification
+    - Stochastic Operations Research
+
+# arXiv 类别（按相关度排序）
+arxiv_categories:
+  - cs.RO   # Robotics
+  - eess.SY # Systems and Control
+  - cs.MA   # Multiagent Systems
+  - math.OC # Optimization and Control
+  - cs.CY   # Computers and Society
+
+# Semantic Scholar 配置
+semantic_scholar:
+  fields_of_study:
+    - Engineering
+    - Computer Science
+    - Mathematics
+  min_citation_count: 0  # 新论文可能暂无引用
+  min_influential_citation_count: 0
+
+# 推荐期刊 RSS（需在 Zotero 中手动订阅）
+recommended_journals:
+  - name: Transportation Research Part C
+    rss_hint: "通过 Zotero 订阅或期刊官网 RSS"
+  - name: IEEE Transactions on Intelligent Transportation Systems
+    rss_hint: "IEEE Xplore RSS feeds"
+  - name: Transportation Research Part E
+    rss_hint: "Elsevier journal RSS"
+  - name: Energy
+    rss_hint: "Elsevier journal RSS"
+  - name: Applied Energy
+    rss_hint: "Elsevier journal RSS"
+
+# 输出设置
+output:
+  literature_folder: "../../07_Literature"  # 相对于 _tools 目录
+  inbox_folder: "../../00_Inbox/待处理"
+  daily_summary_folder: "../../01_Daily"
+  max_results_per_source: 20
+  days_lookback: 7  # 查询最近 N 天的论文
+
+# 运行设置
+schedule:
+  daily_time: "09:00"  # 每日运行时间
+  timezone: "Asia/Shanghai"
